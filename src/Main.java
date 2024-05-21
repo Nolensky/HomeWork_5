@@ -17,22 +17,18 @@ public class Main {
         }
         // Задача 2
         {
-            byte clientOS = 0;
-            short clientDeviceYear = 2012;
+            byte clientOS = 3;
+            short clientDeviceYear = 2013;
             String os;
 
-            if (clientOS == 0) {
-                if (clientDeviceYear < 2015){
+            if (clientOS == 0 && clientDeviceYear < 2015) {
                     System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-                }else {
-                    System.out.println("Установите версию приложения для iOS по ссылке");
-                }
+            } else if (clientOS == 1 && clientDeviceYear < 2015){
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
+            }else if (clientOS == 0) {
+                System.out.println("Установите версию приложения для iOS по ссылке");
             }else if (clientOS == 1) {
-                if (clientDeviceYear < 2015){
-                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
-                }else {
-                    System.out.println("Установите версию приложения для Android по ссылке");
-                }
+                System.out.println("Установите версию приложения для Android по ссылке");
             }else {
                 System.out.println("Вы ввели неверные двнные");
             }
@@ -40,13 +36,13 @@ public class Main {
 
         // Задача 3
         {
-            int year = 2024;
-            if (year % 4 == 0 && year  > 1584 ){
+            int year = 2016;
+            if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
                 System.out.println(year + " год является високосным");
-            }else if (year % 100 > 0 && year > 1584){
-                System.out.println(year + " год не является високосным");
+            }else if (year < 1584){
+                System.out.println("Вы ввели не корректный год");
             }else {
-            System.out.println("Вы ввели не корректный год");
+            System.out.println(year + " год не является високосным");
             }
         }
 
@@ -67,7 +63,7 @@ public class Main {
 
         // Задача 5
         {
-            int monthNumber = 15;
+            int monthNumber = 12;
             switch (monthNumber){
                 case 12:
                 case 1:
